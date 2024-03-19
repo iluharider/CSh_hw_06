@@ -7,7 +7,7 @@ public class Lake : IEnumerable<int>
     public Lake(IEnumerable<int> stones)
     {
         
-        this.stones = stones.OrderBy(x => x).ToList();
+        this.stones = stones.ToList();
     }
 
     
@@ -32,9 +32,9 @@ public class Lake : IEnumerable<int>
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        var stones = new Lake(new int[] { 1,2,3,4,5,6,7,8 });
+        var stones = new Lake(new int[] {  13 , 23 , 1 , -8 , 4 , 9 });
         foreach (var stone in stones)
         {
             Console.Write(stone + " ");
